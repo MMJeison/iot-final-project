@@ -1,0 +1,79 @@
+#:import MDLabel kivymd.uix.label.MDLabel
+#:import MDRaisedButton kivymd.uix.button.MDRaisedButton
+#:import MDBoxLayout kivymd.uix.boxlayout.MDBoxLayout
+#:import ScreenManager kivy.uix.screenmanager.ScreenManager
+#:import Screen kivy.uix.screenmanager.Screen
+
+ScreenManager:
+    id: screen_manager
+
+    Screen:
+        name: 'main'
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: dp(20)
+            padding: dp(40)
+            
+            MDLabel:
+                text: 'Vista Principal'
+                font_style: 'H2'
+                halign: 'center'
+
+            MDRaisedButton:
+                text: 'Ir a Vista 2'
+                size_hint_y: None
+                height: dp(48)
+                pos_hint: {'center_x': 0.5}
+                on_release: 
+                    app.root.current = 'view2'
+
+            MDRaisedButton:
+                text: 'Ir a Vista 3'
+                size_hint_y: None
+                height: dp(48)
+                pos_hint: {'center_x': 0.5}
+                on_release: 
+                    app.root.current = 'view3'
+
+    Screen:
+        name: 'view2'
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: dp(20)
+            padding: dp(40)
+
+            MDLabel:
+                text: 'Vista 2'
+                font_style: 'H2'
+                halign: 'center'
+
+            MDRaisedButton:
+                text: 'Volver a la Vista Principal'
+                size_hint_y: None
+                height: dp(48)
+                pos_hint: {'center_x': 0.5}
+                on_release: 
+                    app.root.current = 'main'
+
+    Screen:
+        name: 'view3'
+        
+        MDBoxLayout:
+            orientation: 'vertical'
+            spacing: dp(20)
+            padding: dp(40)
+
+            MDLabel:
+                text: 'Vista 3'
+                font_style: 'H2'
+                halign: 'center'
+
+            MDRaisedButton:
+                text: 'Volver a la Vista Principal'
+                size_hint_y: None
+                height: dp(48)
+                pos_hint: {'center_x': 0.5}
+                on_release: 
+                    app.root.current = 'main'
